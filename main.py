@@ -13,7 +13,6 @@ headers = ['index', 'data1', 'data2', 'data3']
 data_1 = []
 data_2 = []
 data_3 = []
-x_axis = []
 
 # シリアルポートの設定（ポート名とボーレートは適切に設定してください）
 ser = serial.Serial('COM5', baudrate=115200, timeout=1, stopbits=1)
@@ -58,13 +57,19 @@ try:
                 df = df[df['index'] >= index - data_range]
 
             data1 = df["data1"] 
+            data2 = df["data2"] 
+            data3 = df["data3"] 
 
             plt.gca().clear()
 
             #プロット
             plt.plot(data1)
+            plt.plot(data2)
+            plt.plot(data3)
 
             index += 1
+
+            plt.pause(1)
 
 except KeyboardInterrupt:
     # Ctrl+Cが押された場合にループを抜ける
