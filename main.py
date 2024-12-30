@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 import os
 
 #user input (ここの値を調整してね)
-data_range = 100 #表示範囲を設定
+data_range = 200 #表示範囲を設定
 
 #params
 index = 0
@@ -15,7 +15,7 @@ data_2 = []
 data_3 = []
 
 # シリアルポートの設定（ポート名とボーレートは適切に設定してください）
-ser = serial.Serial('COM5', baudrate=115200, timeout=1, stopbits=1)
+ser = serial.Serial('COM5', baudrate=1000000, timeout=1, stopbits=1)
 
 fig, ax = plt.subplots()
 
@@ -52,7 +52,7 @@ try:
 
             df = pd.read_csv('data.csv')
 
-            if index >= 100:
+            if index >= data_range:
 
                 df = df[df['index'] >= index - data_range]
 
@@ -69,7 +69,7 @@ try:
 
             index += 1
 
-            plt.pause(1)
+            plt.pause(0.001)
 
 except KeyboardInterrupt:
     # Ctrl+Cが押された場合にループを抜ける
