@@ -32,4 +32,6 @@ data_range = 100 #表示範囲を設定
 
 新規実行すると保存したデータは消えてしまうので注意
 
+Ctrl+Cで終了
+
 ![スクリーンショット (329)](https://github.com/user-attachments/assets/c8cec5a3-a51e-43d2-afcc-bafe3b17cc4b)
