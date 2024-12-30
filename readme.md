@@ -2,6 +2,14 @@
 
 適当に作ったのでバグっても文句言わないでね
 
+## 実行環境
+
+- python 3.12.4
+- pyserial 
+- matplotlib 
+- japanize-matplotlib
+- pandas
+
 ## 使い方
 
 ### データのフォーマット
